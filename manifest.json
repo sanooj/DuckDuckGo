@@ -12,6 +12,6 @@
       
    },
    "name": "DuckDuckGo",
-   "permissions": [ "tabs", "http://duckduckgo.com/" ],
+   "permissions": [ "tabs", "http://*/*", "https://*/*" ],
    "version": "1.0.1"
 }
