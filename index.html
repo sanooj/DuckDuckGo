@@ -66,7 +66,7 @@
 	}
 	
 	</style>
-	
+	<script type=text/javascript src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 </head>
 
 <body onload="document.getElementById('input').focus()">
@@ -81,6 +81,14 @@
 				chrome.tabs.create({url: "http://duckduckgo.com/?q="+encodeURIComponent(input)});	
 			
 		}
+		
+		$(document).ready(function(){
+			 $('#input').keyup(function() {
+				var i = $('#input').val();
+				alert(i);
+			});
+		});
+		
 	</script>
 </body>
 
