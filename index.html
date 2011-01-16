@@ -47,11 +47,11 @@
 	
 	#input {
 		border: none;
-		left: 145px;
+		left: 145px!important;
 		outline: none;
 		position: absolute;
-		top: 9.5px;
-		width: 233px;
+		top: 18.5px;
+		width: 240px;
 	}
 	
 	#submitArea {
@@ -66,14 +66,9 @@
 	}
 	
 	</style>
+	<link rel="stylesheet" type="text/css" href="inc/searchfield.css">
 	<script type=text/javascript src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
-</head>
-
-<body onload="document.getElementById('input').focus()">
-	<form id="inputform" onsubmit="compute()" action="" method="post">
-	<input id="input" name="input" type="text" />
-	<input id="submitArea" type="submit" value="" />
-	</form>
+	<script type=text/javascript src="inc/searchfield.js"></script>
 	<script type="text/javascript">
 		function compute() {
 			var input = document.getElementById("input").value;
@@ -83,13 +78,47 @@
 		}
 		
 		$(document).ready(function(){
-			 $('#input').keyup(function() {
-				var i = $('#input').val();
-				alert(i);
+			$('#input').keyup(function() {
+			var i = $('#input').val();
+			
+			
+				
+				
+				$.ajax({
+                    url: "http://suggestqueries.google.com/complete/search",
+                    dataType: "jsonp",
+                    data: {
+                        hl: "en",
+                        ds: "yt",
+                        json: "t",
+                        q: i
+                    },
+                    success: function(data) {
+						
+                        jsonAutosuggest(data, i);
+                    }
+                        
+                });
+                
 			});
 		});
 		
+		function jsonAutosuggest(data, name) {
+				//var result = data.replace(/[^a-zA-Z 0-9]+/g,”);
+				alert(data);
+			
+				return "nikhil ben"
+			}
+		
 	</script>
+</head>
+
+<body onload="document.getElementById('input').focus()">
+	<form id="inputform" onsubmit="compute()" action="" method="post">
+	<p></p><input id="input" name="input" type="text" />
+	<input id="submitArea" type="submit" value="" /></p>
+	</form>
+	
 </body>
 
 </html>
