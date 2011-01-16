@@ -6,6 +6,7 @@
 	
 */
 
+
 this.searchfield = function(){
 	
 	// CONFIG 
@@ -15,7 +16,7 @@ this.searchfield = function(){
 	var id = "input";
 	
 	// Text you want to set as a default value of your search field.
-	var defaultText = "Search the site...";	
+	var defaultText = "Search duckduckgo...";	
 	
 	// set to either true or false
 	// when set to true it will generate search suggestions list for search field based on content of variable below
@@ -23,7 +24,7 @@ this.searchfield = function(){
 	
 	// static list of suggestion options, separated by comma
 	// replace with your own
-	var suggestionText = jsonAutosuggest();
+	//var suggestionText = jsonAutosuggest();
 	
 	// END CONFIG (do not edit below this line, well unless you really, really want to change something :) )
 	
