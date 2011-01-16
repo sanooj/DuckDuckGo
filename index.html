@@ -68,8 +68,10 @@
 	</style>
 	<link rel="stylesheet" type="text/css" href="inc/searchfield.css">
 	<script type=text/javascript src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
-	<script type=text/javascript src="inc/searchfield.js"></script>
+	
 	<script type="text/javascript">
+	var suggestionText = '';
+	
 		function compute() {
 			var input = document.getElementById("input").value;
 			
@@ -81,21 +83,19 @@
 			$('#input').keyup(function() {
 			var i = $('#input').val();
 			
-			
-				
-				
 				$.ajax({
                     url: "http://suggestqueries.google.com/complete/search",
                     dataType: "jsonp",
                     data: {
-                        hl: "en",
-                        ds: "yt",
-                        json: "t",
+						ds: "yt",
+						json: "t",
+						jsonp:"",
+                        //output: "firefox",
                         q: i
                     },
                     success: function(data) {
 						
-                        jsonAutosuggest(data, i);
+                        jsonAutosuggest(data);
                     }
                         
                 });
@@ -103,14 +103,16 @@
 			});
 		});
 		
-		function jsonAutosuggest(data, name) {
-				//var result = data.replace(/[^a-zA-Z 0-9]+/g,”);
-				alert(data);
+		function jsonAutosuggest(jsondata) {
 			
-				return "nikhil ben"
+			var temp = new String(jsondata);
+			temp =  temp.replace(/[^a-zA-Z 0-9]+/g,',');
+			temp =  temp.substring(0, temp.length-1);
+			suggestionText = temp;			
 			}
 		
 	</script>
+	<script type=text/javascript src="inc/searchfield.js"></script>
 </head>
 
 <body onload="document.getElementById('input').focus()">
