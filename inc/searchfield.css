@@ -6,6 +6,7 @@
 */
 
 /* default (inactive field) */
+
 .sf_inactive{
 	border:2px #3d91a5 solid;
 	
@@ -30,6 +31,8 @@
 .sf_suggestion{
 	position:relative;
 	left: 140px;
+	top: -12.5px!important;
+	
 }
 .sf_suggestion ul{
 	border:2px #55C059 solid;
@@ -37,7 +40,6 @@
 	margin:0;
 	padding:0;
 	background:white;
-	top:0;
 	left:0;
 }
 .sf_suggestion li{
