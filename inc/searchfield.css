@@ -32,10 +32,11 @@
 	left: 140px;
 }
 .sf_suggestion ul{
+	border:2px #55C059 solid;
 	position:absolute;
 	margin:0;
 	padding:0;
-	background:black;
+	background:white;
 	top:0;
 	left:0;
 }
@@ -47,9 +48,10 @@
 .sf_suggestion li a{
 	display:block;
 	text-indent:5px;
-	color:white;
+	color:black;
 	text-decoration: none ;
 }
 .sf_suggestion li.selected a{
-	background:#3D91A5;
+	background:#55C059;
+	color: white;
 }
