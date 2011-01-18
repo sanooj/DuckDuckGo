@@ -1,0 +1,75 @@
+<html>
+<head>
+	<title>Wolfram|Alpha - Options</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	
+</head>
+<body onload="restoreOptions()">
+<script type="text/javascript">
+
+// Saves options to localStorage.
+function saveOptions() {
+	var open = document.getElementsByName("open");
+	var openVal = getRadioValue(open);
+	localStorage["open_in"] = openVal;
+	
+	// Update status to let user know options were saved.
+	var status = document.getElementById("status");
+	status.innerHTML = "Options saved.";
+	setTimeout(function() {
+	  status.innerHTML = "";
+	}, 750);
+}
+
+// Restores select box state to saved value from localStorage.
+function restoreOptions() {
+	var open_in = localStorage["open_in"];
+	var newtab = document.getElementById("new");
+	var sametab = document.getElementById("same");
+	if (!open_in || open_in == "sametab") {
+		sametab.checked = true;
+	} else {
+		newtab.checked = true;
+	}
+}
+
+//Get a radio button input value
+function getRadioValue(radioButtons) {
+	for (var i=0; i < radioButtons.length; i++)
+	{
+		if(radioButtons[i].checked) {
+			return radioButtons[i].value;
+		}
+	}
+}
+</script>
+<div id="content">
+<a id="logo" href="http://www.wolframalpha.com/"></a>
+<div class="main-pod">
+	<div class="top-header">
+		<div class="header">Chrome Extension Options</div>
+	</div>
+	<div class="mid" style="padding: 11px 21px 0;">
+		<div id="chromeExtension" class="download-pod">
+			<div class="top">
+				<div class="header">Search Suggestion</div>
+			</div>
+			<div class="mid">
+				<input class="radio" id="same" type="radio" name="open" value="sametab"/>
+				<label for="same">Enable Google Suggestion</label>
+				<input class="radio" id="new"type="radio" name="open" value="newtab"/>
+				<label for="new">Disable Google Suggestion</label>
+				<button class="save" onclick="saveOptions()"></button><span id="status"></span>
+			</div>
+			<div class="bot">&nbsp;</div>
+		</div>
+		<div style="height: 1px; clear:both;"></div>
+	</div>
+	<div class="bot">&nbsp;</div>
+	
+	
+	
+</div>
+</div>
+</body>
+</html>
