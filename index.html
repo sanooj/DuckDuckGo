@@ -80,6 +80,7 @@
 		}
 		
 		$(document).ready(function(){
+		if (localStorage["open_in"] == "sametab" || localStorage["open_in"] == null) {
 			$('#input').keyup(function() {
 			var i = $('#input').val();
 			
@@ -101,6 +102,7 @@
                 });
                 
 			});
+			}
 		});
 		
 		function jsonAutosuggest(jsondata) {
