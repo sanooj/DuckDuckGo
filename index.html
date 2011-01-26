@@ -73,8 +73,11 @@
 
 		function compute() {
 			var input = document.getElementById("input").value;
-
-				chrome.tabs.create({url: "http://duckduckgo.com/?q="+encodeURIComponent(input)});
+      if (localStorage["ssl_value"] == "enableSSL" || localStorage["ssl_value"] == null) {
+				chrome.tabs.create({url: "https://duckduckgo.com/?q="+encodeURIComponent(input)});
+				} else {
+				    chrome.tabs.create({url: "http://duckduckgo.com/?q="+encodeURIComponent(input)});
+				}
 
 		}
 
