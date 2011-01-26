@@ -13,7 +13,7 @@
    },
    "name": "DuckDuckGo",
    "options_page": "options.html",
-   "permissions": ["http://*/*", "https://*/*" ],
+   "permissions": ["http://duckduckgo.com/*", "https://duckduckgo.com/*" ],
    "version": "1.0.2"
 }
 
