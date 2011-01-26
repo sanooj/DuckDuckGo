@@ -2,46 +2,11 @@
 <head>
 	<title>DuckDuckGo - Options</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	
+	<script type=text/javascript src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 </head>
-<body onload="restoreOptions()">
+<body>
 <script type="text/javascript">
 
-// Saves options to localStorage.
-function saveOptions() {
-	var open = document.getElementsByName("open");
-	var openVal = getRadioValue(open);
-	localStorage["open_in"] = openVal;
-	
-	// Update status to let user know options were saved.
-	var status = document.getElementById("status");
-	status.innerHTML = "Options saved.";
-	setTimeout(function() {
-	  status.innerHTML = "";
-	}, 750);
-}
-
-// Restores select box state to saved value from localStorage.
-function restoreOptions() {
-	var open_in = localStorage["open_in"];
-	var newtab = document.getElementById("new");
-	var sametab = document.getElementById("same");
-	if (!open_in || open_in == "sametab") {
-		sametab.checked = true;
-	} else {
-		newtab.checked = true;
-	}
-}
-
-//Get a radio button input value
-function getRadioValue(radioButtons) {
-	for (var i=0; i < radioButtons.length; i++)
-	{
-		if(radioButtons[i].checked) {
-			return radioButtons[i].value;
-		}
-	}
-}
 </script>
 <div id="content">
 <div class="main-pod">
@@ -65,10 +30,11 @@ function getRadioValue(radioButtons) {
 		<div style="height: 1px; clear:both;"></div>
 	</div>
 	<div class="bot">&nbsp;</div>
-	
-	
-	
+
+
+
 </div>
 </div>
 </body>
 </html>
+
