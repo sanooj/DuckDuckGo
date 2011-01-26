@@ -1,35 +1,34 @@
 <!--
         index.html
-        
+
         Copyright 2011 Nikhil Ben Kuruvilla <nikhil@nikhilben.com>
-        
+
         This program is free software; you can redistribute it and/or modify
         it under the terms of the GNU General Public License as published by
         the Free Software Foundation; either version 2 of the License, or
         (at your option) any later version.
-        
+
         This program is distributed in the hope that it will be useful,
         but WITHOUT ANY WARRANTY; without even the implied warranty of
         MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
         GNU General Public License for more details.
-        
+
         You should have received a copy of the GNU General Public License
         along with this program; if not, write to the Free Software
         Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
         MA 02110-1301, USA.
 -->
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
 <head>
 	<title>DuckDuckGo</title>
-	
+
 	<style type="text/css">
 	* {
 		font-family:Arial,Helvetica,sans-serif;
 		font-size: 14px;
 	}
-	
+
 	body {
 		margin: 0;
 		padding: 0;
@@ -37,14 +36,14 @@
 		font-family: Verdana, "Bitstream Vera Sans", sans-serif;
 		font-size:12px;
 	}
-	
+
 	#inputform {
 		margin: 5px;
 		height: 30px;
 		width: 420px;
 		background: url(images/chrome-extension.png) -1px -1px no-repeat;
 	}
-	
+
 	#input {
 		border: none;
 		left: 145px!important;
@@ -53,7 +52,7 @@
 		top: 18.5px;
 		width: 238px;
 	}
-	
+
 	#submitArea {
 		width: 22px;
 		height: 22px;
@@ -64,26 +63,26 @@
 		border: none;
 		cursor: pointer;
 	}
-	
+
 	</style>
 	<link rel="stylesheet" type="text/css" href="inc/searchfield.css">
 	<script type=text/javascript src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
-	
+
 	<script type="text/javascript">
 	var suggestionText = '';
-	
+
 		function compute() {
 			var input = document.getElementById("input").value;
-			
-				chrome.tabs.create({url: "http://duckduckgo.com/?q="+encodeURIComponent(input)});	
-			
+
+				chrome.tabs.create({url: "http://duckduckgo.com/?q="+encodeURIComponent(input)});
+
 		}
-		
+
 		$(document).ready(function(){
 		if (localStorage["open_in"] == "sametab" || localStorage["open_in"] == null) {
 			$('#input').keyup(function() {
 			var i = $('#input').val();
-			
+
 				$.ajax({
                     url: "http://suggestqueries.google.com/complete/search",
                     dataType: "jsonp",
@@ -95,24 +94,24 @@
                         q: i
                     },
                     success: function(data) {
-						
+
                         jsonAutosuggest(data);
                     }
-                        
+
                 });
-                
+
 			});
 			}
 		});
-		
+
 		function jsonAutosuggest(jsondata) {
-			
+
 			var temp = new String(jsondata);
 			temp =  temp.replace(/[^a-zA-Z 0-9]+/g,',');
 			temp =  temp.substring(0, temp.length-1);
-			suggestionText = temp;			
+			suggestionText = temp;
 			}
-		
+
 	</script>
 	<script type=text/javascript src="inc/searchfield.js"></script>
 </head>
@@ -122,7 +121,8 @@
 	<p></p><input id="input" name="input" type="text" />
 	<input id="submitArea" type="submit" value="" /></p>
 	</form>
-	
+
 </body>
 
 </html>
+
