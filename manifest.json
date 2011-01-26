@@ -9,10 +9,11 @@
    "icons": {
       "128": "images/icon128.png",
       "16": "images/icon16.png"
-      
+
    },
    "name": "DuckDuckGo",
    "options_page": "options.html",
-   "permissions": [ "tabs", "http://*/*", "https://*/*" ],
+   "permissions": ["http://*/*", "https://*/*" ],
    "version": "1.0.2"
 }
+
