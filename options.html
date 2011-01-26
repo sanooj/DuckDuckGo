@@ -6,7 +6,11 @@
 </head>
 <body>
 <script type="text/javascript">
-
+  $(document).ready(function() {
+    $('.radio').change(function(){
+      localStorage['suggestion_value'] = $(this).val();
+    });
+  });
 </script>
 <div id="content">
 <div class="main-pod">
@@ -19,11 +23,11 @@
 				<div class="header">Search Suggestion</div>
 			</div>
 			<div class="mid">
-				<input class="radio" id="same" type="radio" name="open" value="sametab"/>
-				<label for="same">Enable Google Suggestion</label>
-				<input class="radio" id="new"type="radio" name="open" value="newtab"/>
-				<label for="new">Disable Google Suggestion</label>
-				<button  onclick="saveOptions()"></button><span id="status"></span>
+				<input class="radio" id="enabledSuggestion" type="radio" name="suggestion" value="enabledSuggestion"/>
+				<label for="enabledSuggestion">Enable Google Suggestion</label>
+				<input class="radio" id="disabledSuggestion"type="radio" name="suggestion" value="disabledSuggestion"/>
+				<label for="disabledSuggestion">Disable Google Suggestion</label>
+
 			</div>
 			<div class="bot">&nbsp;</div>
 		</div>
