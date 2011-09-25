@@ -3,6 +3,7 @@
 	<title>DuckDuckGo - Options</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link rel="icon" type="image/png" href="icon16.png" />
+    <link rel="stylesheet" type="text/css" href="inc/optionfields.css">
 	<script type=text/javascript src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 </head>
 <body>
@@ -17,48 +18,44 @@
     });
   });
 </script>
-<div>
-<div>
-	<div>
-		<div>Chrome Extension Options</div>
-	</div>
-	<div style="padding: 11px 21px 0;">
-		<div id="chromeExtension">
-			<div>
-				<div>Search Suggestion</div>
-			</div>
-			<div>
-				<input class="radio" id="enabledSuggestion" type="radio" name="suggestion" value="enabledSuggestion" checked="checked"/>
-				<label for="enabledSuggestion">Enable Google Suggestion</label>
-				<input class="radio" id="disabledSuggestion"type="radio" name="suggestion" value="disabledSuggestion"/>
-				<label for="disabledSuggestion">Disable Google Suggestion</label>
-
-			</div>
-     <p>&nbsp;</p>
-			<div>SSL Options</div>
-			</div>
-			<div>
-				<input class="radio_ssl" id="enableSSL" type="radio" name="ssl" value="enableSSL" checked="checked" />
-				<label for="enableSSL">Enable SSL</label>
-				<input class="radio_ssl" id="disableSSL"type="radio" name="ssl" value="disableSSL"/>
-				<label for="disableSSL">Disable SSL</label>
-
-			</div>
-
-			<p>
-      By <a href="http://twitter.com/NikhilKuruvilla" target="_blank" style="text-decoration:none;">@NikhilKuruvilla</a>
-			</p>
-
-			<div>&nbsp;</div>
-		</div>
-		<div style="height: 1px; clear:both;"></div>
-	</div>
-	<div >&nbsp;</div>
-
-
-
+<!-- Begin : Outer Pane -->
+<div id="outer-pane">
+	<h2>Chrome Extension <span>Options</span></h2>
+    <div>
+    	<h3>Search Suggestion</h3>
+        <div class="form-fields">
+        	<ul>
+            	<li>
+                	<div class="field"><input class="radio" id="enabledSuggestion" type="radio" name="suggestion" value="enabledSuggestion" checked="checked"/></div>
+                    <div class="label"><label for="enabledSuggestion">Enable Google Suggestion</label></div>
+                </li>
+                <li>
+                	<div class="field"><input class="radio" id="disabledSuggestion"type="radio" name="suggestion" value="disabledSuggestion"/></div>
+                    <div class="label"><label for="disabledSuggestion">Disable Google Suggestion</label></div>
+                </li>
+            </ul>
+        </div>
+        <h3>Search Suggestion</h3>
+        <div class="form-fields">
+        	<ul>
+            	<li>
+                	<div class="field"><input class="radio_ssl" id="enableSSL" type="radio" name="ssl" value="enableSSL" checked="checked" /></div>
+                    <div class="label"><label for="enableSSL">Enable SSL</label></div>
+                </li>
+                <li>
+                	<div class="field"><input class="radio_ssl" id="disableSSL"type="radio" name="ssl" value="disableSSL"/></div>
+                    <div class="label"><label for="disableSSL">Disable SSL</label></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="footer">
+    	<div class="content">Copyright &copy; All Rights Reserved</div>
+        <a href="#">Follow Me</a>
+        <div class="clear"></div>
+    </div>
 </div>
-</div>
+<!-- End : Outer Pane -->
 </body>
 </html>
 
