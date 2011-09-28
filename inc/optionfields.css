@@ -25,6 +25,8 @@ fieldset
 header
 {	background: -webkit-gradient(linear, left top, left bottom, from(#bbe57b), to(#def3b0));
 	height:62px;
+	border-bottom:#b8e478 1px solid;
+	box-shadow:0 2px 2px #eaeaea;
 }
 section
 {	padding-bottom:80px;
@@ -33,7 +35,7 @@ section
 {	max-width:600px;
 	padding:10px;
 	border:2px solid #E77;
-	margin:10px auto;
+	margin:30px auto 10px;
 }
 header section
 {	background:url(../images/duck-logo.png) no-repeat -25px top;
