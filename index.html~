@@ -135,19 +135,43 @@ form {
 	<link rel="stylesheet" type="text/css" href="inc/searchfield.css">
 	<script type=text/javascript src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 	<script type="text/javascript">
-	     var suggestionText = '';
+	var suggestionText = '';
 
 		function compute() {
 			var input = document.getElementById("input").value;
-               if (localStorage["ssl_value"] == "enableSSL" || localStorage["ssl_value"] == null) {
-                    
+      if (localStorage["ssl_value"] == "enableSSL" || localStorage["ssl_value"] == null) {
 				chrome.tabs.create({url: "https://duckduckgo.com/?q="+encodeURIComponent(input)});
 				} else {
-
 				    chrome.tabs.create({url: "http://duckduckgo.com/?q="+encodeURIComponent(input)});
 				}
 
 		}
+
+		$(document).ready(function(){
+		if (localStorage["suggestion_value"] == "enabledSuggestion" || localStorage["suggestion_value"] == null) {
+			$('#input').keyup(function() {
+			var i = $('#input').val();
+
+				$.ajax({
+                    url: "http://suggestqueries.google.com/complete/search",
+                    dataType: "jsonp",
+                    data: {
+						ds: "yt",
+						json: "t",
+						jsonp:"",
+                        //output: "firefox",
+                        q: i
+                    },
+                    success: function(data) {
+
+                        jsonAutosuggest(data);
+                    }
+
+                });
+
+			});
+			}
+		});
 
 		function jsonAutosuggest(jsondata) {
 
@@ -189,7 +213,7 @@ form {
 					$(this).find('span').remove();
 				}
 				else
-				{	$('#input').val($val+" ");
+				{	$('#input').val($val);
 					$(this).parentsUntil('.list').parent('.list').slideUp();
 				}
 				

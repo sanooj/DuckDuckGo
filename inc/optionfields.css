@@ -23,10 +23,11 @@ fieldset
 	position:relative;
 }
 header
-{	background: -webkit-gradient(linear, left top, left bottom, from(#bbe57b), to(#def3b0));
-	height:62px;
-	border-bottom:#b8e478 1px solid;
-	box-shadow:0 2px 2px #eaeaea;
+{	/*background: -webkit-gradient(linear, left top, left bottom, from(#bbe57b), to(#def3b0*/
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#474747), color-stop(2%,#dd6347), color-stop(12%,#dc6047), color-stop(15%,#d95c44), color-stop(17%,#da5b46), color-stop(34%,#d45241), color-stop(42%,#cf4a3e), color-stop(47%,#cf483e), color-stop(66%,#c83b36), color-stop(81%,#c43433), color-stop(88%,#c43334), color-stop(90%,#8d2113), color-stop(92%,#c9c9c9), color-stop(93%,#dadada), color-stop(95%,#e7e7e7), color-stop(97%,#f3f3f3), color-stop(100%,#fafafa), color-stop(100%,#ffffff)); 
+	height:60px;
+	/*border-bottom:#b8e478 1px solid;
+	box-shadow:0 2px 2px #eaeaea;*/
 }
 section
 {	padding-bottom:80px;
@@ -38,8 +39,8 @@ section
 	margin:30px auto 10px;
 }
 header section
-{	background:url(../images/duck-logo.png) no-repeat -25px top;
-	height:62px;
+{	background:url(../images/duck-logo.png) no-repeat left top;
+	height:57px;
 	padding:0 !important;
 	border:0;
 	margin:0 auto;
@@ -47,7 +48,7 @@ header section
 }
 header h2
 {	background:url(../images/duck-large.png) no-repeat 80px top;
-	height:60px;
+	height:57px;
 	text-indent:-99999px;
 	overflow:hidden;
 	padding:0;
