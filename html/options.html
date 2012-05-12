@@ -6,8 +6,10 @@
     <link rel="stylesheet" type="text/css" href="../css/optionfields.css">
 	<script type=text/javascript src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 </head>
-<body>
+<body onload="restore_options()">
 <script type="text/javascript">
+
+  // SSL Suggessions
   $(document).ready(function() {
     $('.radio').change(function(){
       localStorage['suggestion_value'] = $(this).val();
@@ -17,6 +19,41 @@
       localStorage['ssl_value'] = $(this).val();
     });
   });
+
+  // Saves options to localStorage.
+function save_options() {
+  var dev = document.getElementById("dev").checked;
+  localStorage["dev"] = dev;
+  var meanings = document.getElementById("meanings").checked;
+  localStorage["meanings"] = meanings;
+
+  if (dev)
+    console.log(localStorage);
+
+  // Update status to let user know options were saved.
+  var status = document.getElementById("status");
+  status.innerHTML = "Options Saved.";
+  setTimeout(function() {
+    status.innerHTML = "";
+  }, 750);
+}
+
+// Restores select box state to saved value from localStorage.
+function restore_options() {
+  var dev = localStorage["dev"];
+  if (dev === 'true') {
+    document.getElementById("dev").checked = true;
+  } else {
+    document.getElementById("dev").checked = false;
+  }
+
+  var meanings = localStorage["meanings"];
+  if (meanings === 'true') {
+    document.getElementById("meanings").checked = true;
+  } else {
+    document.getElementById("meanings").checked = false;
+  }
+}
 </script>
 <!-- Begin : Outer Pane -->
 <div id="outer-pane">
@@ -30,9 +67,10 @@
     <!-- Begin : Section -->
     <section >
     	<div class="content-pane">
+            <div id="status"> </div>
     	<fieldset>
     	
-        <h3>SSL Suggestion</h3>
+        <h3>SSL Suggestion: </h3>
         <div class="form-fields">
         	<ul>
             	<li>
@@ -45,6 +83,26 @@
                 </li>
             </ul>
         </div>
+
+        <h3>Developer Mode: </h3>
+        <div class="form-fields">
+            <ul>
+                <li>
+                    <div class="field"><input type="checkbox" id="dev" ></input></div>
+                    <div class="label"><label for="dev">Enable Developer Mode</label></div>
+                </li>
+            </ul>
+        </div>
+        <h3>Meanings: </h3>
+        <div class="form-fields">
+            <ul>
+                <li>
+                    <div class="field"><input type="checkbox" id="meanings" checked="yes"></input></div>
+                    <div class="label"><label for="meanings">Enable Meanings</label></div>
+                </li>
+            </ul>
+        </div>
+        <button onclick="save_options()" class="button">Save</button>
         </fieldset>
         </div>
     </section>

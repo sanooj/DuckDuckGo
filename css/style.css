@@ -1,0 +1,130 @@
+
+/*
+        style.css
+
+        Copyright 2011 sanooj A H <sanooj007@gmail.com> 
+
+        This program is free software; you can redistribute it and/or modify
+        it under the terms of the GNU General Public License as published by
+        the Free Software Foundation; either version 2 of the License, or
+        (at your option) any later version.
+
+        This program is distributed in the hope that it will be useful,
+        but WITHOUT ANY WARRANTY; without even the implied warranty of
+        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+        GNU General Public License for more details.
+
+        You should have received a copy of the GNU General Public License
+        along with this program; if not, write to the Free Software
+        Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+        MA 02110-1301, USA.
+*/
+* {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: 14px;
+}
+body {
+	margin: 0;
+	padding: 0;
+	color: #fff;
+	font-family: Verdana, "Bitstream Vera Sans", sans-serif;
+	font-size:12px;
+}
+#inputpane {
+	margin: 5px;
+	height: 30px;
+	width: 415px;
+	background: url(../img/chrome-extension.png) -1px -1px no-repeat;
+}
+form {
+	margin: 0;
+	padding:0;
+}
+.search-pane {
+	padding-left:139px;
+	padding-top:3px;
+}
+#input {
+	border: #ff8686 1px solid;
+	border-right:0;
+	outline: none;
+	width: 242px;
+	padding:3px;
+	height:24px;
+	float:left;
+	-webkit-border-radius:4px 0 0 4px;
+	border-radius:4px 0 0 4px;
+}
+.submit-pane {
+	float: right;
+	width: 32px;
+	border: #18AB47 solid 1px;
+	background: #2DB750;
+	border-radius: 0 3px 3px 0;
+	-webkit-border-top-right-radius: 3px;
+	-webkit-border-bottom-right-radius: 3px;
+	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
+	-webkit-box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
+	border-top-right-radius: 3px 3px;
+	border-bottom-right-radius: 3px 3px;
+	position:relative;
+}
+#submitArea {
+	width: 22px;
+	height: 22px;
+	background: none;
+	border: none;
+	cursor: pointer;
+	float: left;
+	border: 0;
+	background: url(../img/search-icons.png) no-repeat 0 0;
+}
+#submitArea:active {
+	background: url(../img/search-icons.png) no-repeat left -22px;
+}
+.clear {
+	clear:both;
+}
+.search-dd {
+	width:10px;
+	height:22px;
+	display:block;
+	float:left;
+	background: url(../img/search-icons.png) no-repeat right top;
+}
+.search-dd:active {
+	background: url(../img/search-icons.png) no-repeat right -22px;
+}
+.list {
+	position:absolute;
+	width:200px;
+	right:0;
+	top:24px;
+	border:#eaeaea 1px solid;
+	border-radius:0 0 6px 6px;
+	padding:10px 5px 5px;
+	display:none;
+}
+.list ul {
+	max-height:100px;
+	overflow-y:scroll;
+	padding:0;
+	margin:0;
+	list-style:none;
+}
+.list ul ul
+{	padding:0;
+	margin:0;
+	max-height:auto;
+	overflow:visible;
+}
+.list li {
+	color:#000;
+	border-bottom:#eaeaea 1px dashed;
+	padding:2px 8px;
+	margin-bottom:2px;
+	cursor:pointer;
+}
+.list li:hover {
+	background:#e3e3e3;
+}

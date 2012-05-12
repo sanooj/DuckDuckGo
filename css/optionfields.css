@@ -1,3 +1,24 @@
+/*
+        optionfield.css
+
+        Copyright 2011 sanooj A H <sanooj007@gmail.com> 
+
+        This program is free software; you can redistribute it and/or modify
+        it under the terms of the GNU General Public License as published by
+        the Free Software Foundation; either version 2 of the License, or
+        (at your option) any later version.
+
+        This program is distributed in the hope that it will be useful,
+        but WITHOUT ANY WARRANTY; without even the implied warranty of
+        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+        GNU General Public License for more details.
+
+        You should have received a copy of the GNU General Public License
+        along with this program; if not, write to the Free Software
+        Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+        MA 02110-1301, USA.
+*/
+
 @charset "utf-8";
 /* CSS Document */
 html,body
@@ -126,10 +147,26 @@ input[type="radio"]
 	height:18px;
 	content: url(../img/radio-normal.png);
 	display:block;
+	position: relative;
+	top:2px;
 }
 input[type="radio"]:checked
 {	width:17px;
 	height:18px;
 	content: url(../img/radio-checked.png);
 	display:block;
+}
+input[type="checkbox"]
+{	position: relative;
+	top:2px;
+}
+#status {
+	color:#008000;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 0 0 20px;
+}
+.button {
+	padding:4px 10px;
+	cursor: pointer;
 }
