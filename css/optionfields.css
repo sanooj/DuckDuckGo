@@ -1,0 +1,135 @@
+@charset "utf-8";
+/* CSS Document */
+html,body
+{	height:100%;
+}
+body
+{	font:normal 12px Arial, Helvetica, sans-serif;
+	color:#000;
+	padding:0;
+	margin:0;
+}
+fieldset
+{	border:0;
+	padding:0;
+	margin:0;
+}
+.clear
+{	clear:both;
+}
+#outer-pane
+{	width:100%;
+	min-height:100%;
+	position:relative;
+}
+header
+{	/*background: -webkit-gradient(linear, left top, left bottom, from(#bbe57b), to(#def3b0*/
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#474747), color-stop(2%,#dd6347), color-stop(12%,#dc6047), color-stop(15%,#d95c44), color-stop(17%,#da5b46), color-stop(34%,#d45241), color-stop(42%,#cf4a3e), color-stop(47%,#cf483e), color-stop(66%,#c83b36), color-stop(81%,#c43433), color-stop(88%,#c43334), color-stop(90%,#8d2113), color-stop(92%,#c9c9c9), color-stop(93%,#dadada), color-stop(95%,#e7e7e7), color-stop(97%,#f3f3f3), color-stop(100%,#fafafa), color-stop(100%,#ffffff)); 
+	height:60px;
+	/*border-bottom:#b8e478 1px solid;
+	box-shadow:0 2px 2px #eaeaea;*/
+}
+section
+{	padding-bottom:80px;
+}
+.content-pane
+{	max-width:600px;
+	padding:10px;
+	border:2px solid #E77;
+	margin:30px auto 10px;
+}
+header section
+{	background:url(../img/duck-logo.png) no-repeat left top;
+	height:57px;
+	padding:0 !important;
+	border:0;
+	margin:0 auto;
+	max-width:600px;
+}
+header h2
+{	background:url(../img/duck-large.png) no-repeat 80px top;
+	height:57px;
+	text-indent:-99999px;
+	overflow:hidden;
+	padding:0;
+	margin:0;
+}
+#outer-pane h3
+{	font: bold 18px "Segoe UI","Arial",sans-serif;
+	color:#E44;
+	padding:0 0 10px 0;
+	margin:0;
+}
+.form-fields
+{	border:#fcbabc 1px solid;
+	padding:2px;
+	margin-bottom:15px;
+}
+.form-fields ul
+{	background:#fef9f9;
+	list-style:none;
+	padding:0;
+	margin:0;
+	height:25px;
+	display:table;
+	width:100%;
+}
+.form-fields li
+{	float:left;
+	width:50%;
+	height:25px;
+	display:table-cell;
+}
+.form-fields li .field
+{	float:left;
+	height:25px;
+	background:#fff;
+	padding-left:5px;
+	margin-right:5px;
+}
+.form-fields li .label
+{	float:left;
+	height:25px;
+	line-height:23px;
+}
+footer
+{	background-image: -webkit-linear-gradient(top, #ffffff, #f1f1f1);
+	position:absolute;
+	width:100%;
+	left:0;
+	bottom:0;
+}
+#footer
+{	width:600px;
+	height:50px;
+	margin:0 auto
+}
+#footer a
+{	width:106px;
+	height:48px;
+	display:block;
+	float:right;
+	text-indent:-9999px;
+	overflow:hidden;
+	background:url(../img/follow-me.png) no-repeat left top;
+}
+#footer .content
+{	height:18px;
+	padding:15px 0;
+	width:489px;
+	display:block;
+	float:left;
+}
+/* ===  Select Option Styles ===*/
+input[type="radio"]
+{	width:17px;
+	height:18px;
+	content: url(../img/radio-normal.png);
+	display:block;
+}
+input[type="radio"]:checked
+{	width:17px;
+	height:18px;
+	content: url(../img/radio-checked.png);
+	display:block;
+}

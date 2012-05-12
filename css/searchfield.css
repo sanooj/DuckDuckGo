@@ -1,0 +1,59 @@
+/* 
+
+	SearchField	
+	by Alen Grakalic, brought to you by cssglobe.com
+	
+*/
+
+/* default (inactive field) */
+
+.sf_inactive{
+	border:2px #3d91a5 solid;
+	
+}
+/* on focus (when field is clicked on)  */
+.sf_active{
+	border:2px #8BB544 solid;
+	background:#fff;
+	color:#333;
+}
+/* with text (when field is inactive but contains user's input)  */
+.sf_text{
+	border:2px #3c90a5 solid;
+	background:#fff;
+	color:#888;
+
+		
+}
+
+/* suggestions box */
+/* js code generates unordered list */
+.sf_suggestion{
+	position:relative;
+	left: 140px;
+	top: -12.5px!important;
+	
+}
+.sf_suggestion ul{
+	border:2px #55C059 solid;
+	position:absolute;
+	margin:0;
+	padding:0;
+	background:white;
+	left:0;
+}
+.sf_suggestion li{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+.sf_suggestion li a{
+	display:block;
+	text-indent:5px;
+	color:black;
+	text-decoration: none ;
+}
+.sf_suggestion li.selected a{
+	background:#55C059;
+	color: white;
+}
